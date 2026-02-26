@@ -24,7 +24,7 @@ The system uses 4 specialized AI agents working sequentially:
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/DevSujal/financial-document-analyzer-debug
 cd financial-document-analyzer-debug
 
 # 2. Create and activate virtual environment
