@@ -13,7 +13,21 @@ The system uses 4 specialized AI agents working sequentially:
 
 ---
 
-## Setup & Installation
+## 🐳 Quick Start (Docker — Recommended)
+
+```bash
+# 1. Copy .env.sample and add your API key
+cp .env.sample .env
+# Edit .env and set your LLM_API_KEY
+
+# 2. Run everything
+docker compose up --build
+```
+This starts **Redis + FastAPI + Celery worker** — all in one command. API available at `http://localhost:8000`.
+
+---
+
+## Setup & Installation (Manual)
 
 ### Prerequisites
 - Python 3.10+
@@ -62,28 +76,15 @@ llm = LLM(model="gpt-4o", api_key=os.getenv("OPENAI_API_KEY"))
 
 ---
 
-## Running the Application
+## Running the Application (Manual)
 
-### 🐳 Docker (Recommended — One Command)
-```bash
-# 1. Copy .env.sample and add your API key
-cp .env.sample .env
-# Edit .env and set your LLM_API_KEY
-
-# 2. Run everything
-docker compose up --build
-```
-This starts **Redis + FastAPI + Celery worker** — all in one command. API available at `http://localhost:8000`.
-
-### Manual Setup (without Docker)
-
-#### Basic Mode (synchronous)
+### Basic Mode (synchronous)
 ```bash
 python main.py
 ```
 The server starts at `http://localhost:8000`.
 
-#### With Celery Queue Worker (async mode)
+### With Celery Queue Worker (async mode)
 ```bash
 # Terminal 1: Start Redis server
 redis-server
