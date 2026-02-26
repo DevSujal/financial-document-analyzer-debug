@@ -12,9 +12,6 @@ __pycache__/
 # Database
 *.db
 
-# Uploaded files
-data/
-
 # IDE
 .vscode/
 .idea/
